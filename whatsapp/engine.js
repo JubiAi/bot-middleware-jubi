@@ -99,7 +99,6 @@ function pushStage(from, stage) {
                             }
                         })
                         let qrText = "Please type \n" + qrData + " \nas options."
-                        // await pushMessage("whatsapp:+" + stage.sender, from, qrText)
                         completeText+=qrText
                         break;
                     case "button":
@@ -112,14 +111,12 @@ function pushStage(from, stage) {
                             }
                         })
                         let btnText = "Please type \n" + btnData + " \nas options."
-                        // await pushMessage("whatsapp:+" + stage.sender, from, btnText)
                         completeText+=btnText
                         break;
                     case "generic":
-                        // await pushMessage("whatsapp:+" + stage.sender, from, "We have some options for you")
                         let carousalData = 'We have some options for you \n\n'
                         stage.next.data.forEach((outerElement, index) => {
-                            carousalData += "\n\n*" + outerElement.title + "*: " + outerElement.text + "\n"
+                            carousalData += "\n\n*" + outerElement.title + "*, " +  "\n"
                             outerElement.buttons.forEach((element) => {
                                 let k = 0
                                 carousalData = carousalData + "Type *" + element.data + "* to select " + element.text
@@ -129,10 +126,7 @@ function pushStage(from, stage) {
                             })
                         })
                         console.log(carousalData)
-                        // setTimeout(async () => {
-                        // await pushMessage("whatsapp:+" + stage.sender, from, carousalData)
                         completeText+=carousalData
-                        // }, 500 * (index + 1))
                         break;
                     default:
                         break;
