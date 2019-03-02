@@ -98,7 +98,7 @@ function pushStage(from, stage) {
                                 qrData = qrData + ",\n"
                             }
                         })
-                        let qrText = "Please type \n" + qrData + " \nas options."
+                        let qrText = "\n*Please type* \n" + qrData + " \nas options."
                         completeText+=qrText
                         break;
                     case "button":
@@ -110,7 +110,7 @@ function pushStage(from, stage) {
                                 btnData = btnData + ",\n"
                             }
                         })
-                        let btnText = "Please type \n" + btnData + " \nas options."
+                        let btnText = "\n*Please type* \n" + btnData + " \nas options."
                         completeText+=btnText
                         break;
                     case "generic":
