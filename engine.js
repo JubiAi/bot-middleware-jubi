@@ -312,7 +312,9 @@ function utmExtractor(data){
         keyValues
         .map((element)=>{
             if(element&&element.includes(".")&&element.split(".").length==2){
-                data.tags[element.split(".")[0]]=element.split(".")[1]
+                if(!data.tags[element.split(".")[0]]){
+                    data.tags[element.split(".")[0]]=element.split(".")[1]
+                }
             }
             return "invalid"
         });
